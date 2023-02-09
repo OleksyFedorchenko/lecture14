@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 
 function Countries() {
-    const navigate = useHistory();
+    const history = useHistory();
     const countries = useSelector(({countries}) => countries);
     const dispatch = useDispatch();
 
@@ -37,7 +37,7 @@ function Countries() {
 
     const handleOnClick = (e) => {
         const id = e.currentTarget.id;
-        navigate.push('/addEditCountry/' + id);
+        history.push('/addEditCountry/' + id);
     }
 
     return (

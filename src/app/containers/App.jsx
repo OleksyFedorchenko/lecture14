@@ -9,13 +9,13 @@ import {
 import IntlProvider from 'components/IntlProvider';
 import Header from 'components/Header';
 import PageInitial from 'pageProviders/Initial';
+import PageCountry from 'pageProviders/Countries';
+import PageAddEditCountry from 'pageProviders/AddEditCountry';
 import PageLogin from 'pageProviders/Login';
 import * as PAGES from 'constants/pages';
 import {
   fetchUser,
 } from '../actions/user';
-import Countries from "../../pages/Countries";
-import AddEditCountry from "../../components/AddEditCountry/AddEditCountry";
 
 const App = () => {
   const [state, setState] = useState({
@@ -46,13 +46,13 @@ const App = () => {
                 <PageInitial />
               </Route>
               <Route exact path={`/${PAGES.COUNTRIES}`}>
-                <Countries />
+                <PageCountry />
               </Route>
-              <Route exact path={`/${PAGES.ADDEDITCOUNTRY}`}>
-                <AddEditCountry />
+              <Route exact path={`/${PAGES.ADD_EDIT_COUNTRY}`}>
+                <PageAddEditCountry />
               </Route>
-              <Route path={`/addEditCountry/:id`}>
-                <AddEditCountry />
+              <Route path={`/${PAGES.ADD_EDIT_COUNTRY}/:id`}>
+                <PageAddEditCountry />
               </Route>
 
               <Redirect from="*" to={`/${PAGES.INITIAL}`} />
