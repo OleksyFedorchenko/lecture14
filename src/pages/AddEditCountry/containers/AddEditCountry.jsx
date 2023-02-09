@@ -117,9 +117,9 @@ function AddEditCountry() {
         }
     }
     return (
-        <div className={classes.main}>
+        <div>
             <br/>
-            <form className="add-country">
+            <form className={classes.main}>
                 <TextField label="name" name="name" onChange={(e) => setName(e.target.value)} value={name}/>
                 <br/>
                 <TextField label="continent" name="continent" onChange={(e) => setContinent(e.target.value)}
