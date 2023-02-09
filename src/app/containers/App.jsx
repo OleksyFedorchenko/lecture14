@@ -45,10 +45,10 @@ const App = () => {
               <Route path={`/${PAGES.INITIAL}`}>
                 <PageInitial />
               </Route>
-              <Route exact path={`/countries`}>
+              <Route exact path={`/${PAGES.COUNTRIES}`}>
                 <Countries />
               </Route>
-              <Route exact path={`/addEditCountry`}>
+              <Route exact path={`/${PAGES.ADDEDITCOUNTRY}`}>
                 <AddEditCountry />
               </Route>
               <Route path={`/addEditCountry/:id`}>
