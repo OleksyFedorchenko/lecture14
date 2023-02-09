@@ -1,1 +1,1 @@
-export {default} from './AddEditCountry'
+export {default} from './containers/AddEditCountry'
