@@ -32,7 +32,7 @@ const Initial = ({
         <NavLink to="/countries"><b>Countries</b></NavLink>
       </div>
       {canSeeList && availableItems.map((item, index) => (
-        <Link
+        <Link key={index}
           href={index % 2 === 0
             ? `https://www.google.com.ua/search?q=${item}&hl=ru`
             : undefined}
