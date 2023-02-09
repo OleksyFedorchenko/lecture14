@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from "react-redux";
 import countriesActions from '../actions/countries'
 import Button from '@mui/material/Button';
 import {NavLink, useHistory} from 'react-router-dom';
-import './Countries.css';
 import {
     CircularProgress,
     Paper,
@@ -14,11 +13,21 @@ import {
     TableHead,
     TableRow,
 } from "@mui/material";
+import {makeStyles} from "@material-ui/core/styles";
+
+const getClasses = makeStyles(() => ({
+    main: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+}));
 
 function Countries() {
     const history = useHistory();
     const countries = useSelector(({countries}) => countries);
     const dispatch = useDispatch();
+    const classes = getClasses();
 
     useEffect(() => {
         dispatch(countriesActions.fetchCountries())
@@ -41,7 +50,7 @@ function Countries() {
     }
 
     return (
-        <div className="main">
+        <div className={classes.main}>
             <br/>
             <div>
                 <NavLink to="/">Initial</NavLink>

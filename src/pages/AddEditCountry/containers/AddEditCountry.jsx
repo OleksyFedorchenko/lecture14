@@ -3,14 +3,24 @@ import Button from '@mui/material/Button';
 import {TextField} from "@mui/material";
 import {useParams} from "react-router-dom";
 import {useHistory} from "react-router-dom";
-import './AddEditCountry.css'
+import {makeStyles} from "@material-ui/core/styles";
+
+const getClasses = makeStyles(() => ({
+    main: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent:'space-around',
+    },
+}));
 
 function AddEditCountry() {
     const [name, setName] = useState('');
     const [continent, setContinent] = useState('');
     const [area, setArea] = useState('');
     let params = useParams();
-    let navigate = useHistory();
+    let history = useHistory();
+    const classes = getClasses();
 
 
     useEffect(() => {
@@ -88,7 +98,7 @@ function AddEditCountry() {
                 editCountry().then(response => {
                     if (response.ok) {
                         console.log("Country was editing in list");
-                        navigate.push('/countries');
+                        history.push('/countries');
                     } else {
                         console.log('Error with status ' + response.status);
                     }
@@ -98,7 +108,7 @@ function AddEditCountry() {
                 postCountry().then(response => {
                     if (response.ok) {
                         console.log("Country was added to list");
-                        navigate.push('/countries');
+                        history.push('/countries');
                     } else {
                         console.log('Error with status ' + response.status);
                     }
@@ -107,7 +117,7 @@ function AddEditCountry() {
         }
     }
     return (
-        <div>
+        <div className={classes.main}>
             <br/>
             <form className="add-country">
                 <TextField label="name" name="name" onChange={(e) => setName(e.target.value)} value={name}/>
@@ -120,7 +130,7 @@ function AddEditCountry() {
                 <br/>
                 <Button onClick={postData} variant="contained" type="submit">Add / Edit</Button>
                 <br/>
-                <Button onClick={() => (navigate.push('/countries'))} variant="contained" color="error">Cancel</Button>
+                <Button onClick={() => (history.push('/countries'))} variant="contained" color="error">Cancel</Button>
             </form>
         </div>
     )
