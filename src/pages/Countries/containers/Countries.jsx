@@ -70,6 +70,7 @@ function Countries() {
                     <br/>
                     <TableContainer component={Paper}>
                         <Table sx={{minWidth: 650}} aria-label="simple table">
+                            <caption>Country table</caption>
                             <TableHead>
                                 <TableRow>
                                     <TableCell><b>Name</b></TableCell>
