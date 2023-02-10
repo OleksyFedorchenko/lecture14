@@ -92,9 +92,11 @@ function Countries() {
                                         <TableCell align="right">
                                             <Button variant="outlined" id={row.id}
                                                     onClick={handleOnClick}>Edit</Button>
+
                                         </TableCell>
-                                        <TableCell align="right"><Button variant="outlined" id={row.id} color="error"
-                                                                         onClick={deleteCountry}>Delete</Button></TableCell>
+                                        <TableCell align="right">
+                                            <Button variant="outlined" id={row.id} color="error"
+                                                    onClick={deleteCountry}>Delete</Button></TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
