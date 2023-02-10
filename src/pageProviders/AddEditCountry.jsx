@@ -4,7 +4,7 @@ import AddEditCountryPage from 'pages/AddEditCountry';
 
 const AddEditCountry = () => (
     <PageAccessValidator>
-        <AddEditCountryPage />
+        <AddEditCountryPage/>
     </PageAccessValidator>
 );
 

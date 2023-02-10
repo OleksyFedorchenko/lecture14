@@ -4,7 +4,7 @@ import CountryPage from 'pages/Countries';
 
 const Countries = () => (
     <PageAccessValidator>
-            <CountryPage />
+        <CountryPage/>
     </PageAccessValidator>
 );
 

@@ -10,7 +10,7 @@ const getClasses = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent:'space-around',
+        justifyContent: 'space-around',
     },
 }));
 

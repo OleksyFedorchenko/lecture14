@@ -2,7 +2,7 @@ const initialState = {
     isLoading: false,
     isError: false,
     list: [],
-    name: "This is tasks from Back-End",
+    name: "This is countries from Back-End",
 }
 // eslint-disable-next-line
 export default (state = initialState, action) => {
