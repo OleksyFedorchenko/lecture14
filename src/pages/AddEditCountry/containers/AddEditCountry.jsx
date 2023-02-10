@@ -4,6 +4,7 @@ import {TextField} from "@mui/material";
 import {useParams} from "react-router-dom";
 import {useHistory} from "react-router-dom";
 import {makeStyles} from "@material-ui/core/styles";
+import config from '../../../config/configExample';
 
 const getClasses = makeStyles(() => ({
     main: {
@@ -43,7 +44,7 @@ function AddEditCountry() {
     }, []);
 
     const getCountryById = (id) => {
-        const url = "http://localhost:8080/country/" + id;
+        const url = config.BASE_URL + "/country/" + id;
         const options = {
             method: 'GET',
             headers: {
@@ -59,7 +60,7 @@ function AddEditCountry() {
             continent: continent,
             area: area,
         }
-        const url = "http://localhost:8080/country";
+        const url = config.BASE_URL + "/country";
         const options = {
             method: 'POST',
             headers: {
@@ -77,7 +78,7 @@ function AddEditCountry() {
             continent: continent,
             area: area,
         }
-        const url = "http://localhost:8080/country/edit";
+        const url = config.BASE_URL + "/country/edit";
         const options = {
             method: 'PUT',
             headers: {

@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import countriesActions from '../actions/countries'
 import Button from '@mui/material/Button';
 import {NavLink, useHistory} from 'react-router-dom';
+import config from '../../../config/configExample';
 import {
     CircularProgress,
     Paper,
@@ -37,7 +38,7 @@ function Countries() {
     const deleteCountry = (e) => {
         const id = e.currentTarget.id;
         if (window.confirm("Are you really want to delete an item?")) {
-            fetch("http://localhost:8080/country/delete/" + id, {method: 'DELETE'})
+            fetch(config.BASE_URL+"/country/delete/" + id, {method: 'DELETE'})
                 .then(() => {
                     dispatch(countriesActions.fetchCountries())
                 })
