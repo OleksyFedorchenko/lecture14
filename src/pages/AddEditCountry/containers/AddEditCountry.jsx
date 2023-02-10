@@ -128,7 +128,7 @@ function AddEditCountry() {
                 <TextField type="number" InputProps={{inputProps: {min: 0}}} label="area" name="area"
                            onChange={(e) => setArea(e.target.value)} value={area}/>
                 <br/>
-                <Button onClick={postData} variant="contained" type="submit">Add / Edit</Button>
+                <Button onClick={postData} variant="contained" type="submit">{params.id ? "EDIT" : "ADD"}</Button>
                 <br/>
                 <Button onClick={() => (history.push('/countries'))} variant="contained" color="error">Cancel</Button>
             </form>
